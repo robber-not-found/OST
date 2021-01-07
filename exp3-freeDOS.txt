@@ -1,0 +1,6 @@
+sudo apt-get install qemu
+qemu-img create dos.img 200M
+qemu-system-i368 -m 16 -k en-us -rtc base=localtime -soundhw sb16,adlib -device cirrus-vga -hda dos.img -cdrom FD12CD.iso -boot
+#Full installation
+#Yes
+

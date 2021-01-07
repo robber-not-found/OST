@@ -1,0 +1,11 @@
+sudo apt install samba
+sudo service smbd status
+mkdir /home/<system_name>/sambashare/
+sudo nano /etc/samba/smb.conf
+sudo smbpasswd -a elcot
+#create password
+smbclient \\\\localhost\\elcot -Uelcot
+ls
+pwd
+mkdir test
+exit

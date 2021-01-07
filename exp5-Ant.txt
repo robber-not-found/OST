@@ -1,0 +1,45 @@
+sudo apt-get install ant
+sudo apt-get install openjdk-8-jre
+mkdir ant
+cd ant
+mkdir -p src/hello
+gedit src/hello/HelloWorld.java
+mkdir -p build/classes 
+javac -sourcepath src -d build/classes/ src/hello/HelloWorld.java
+java -cp build/classeshello.HelloWorld
+gedit build.xml
+ant clean
+ant compile jar run
+
+HelloWolrd.java:
+
+package hello;
+public class HelloWorld {
+public static void main(String[] args) {
+System.out.println("Hello World");
+}
+}
+
+build.xml:
+
+<project>
+<target name="clean">
+<delete dir="build"/>
+</target>
+<target name="compile">
+<mkdir dir="build/classes"/>
+<javac srcdir="src" destdir="build/classes"/>
+</target>
+<target name="jar">
+<mkdir dir="build/jar"/>
+<jar destfile="build/jar/HelloWorld.jar"
+basedir="build/classes">
+<manifest>
+<attribute name="Main-Class" value="hello.HelloWorld"/>
+</manifest>
+</jar>
+</target>
+<target name="run">
+<java jar="build/jar/HelloWorld.jar" fork="true"/>
+</target>
+</project>

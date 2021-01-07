@@ -1,0 +1,12 @@
+sudo apt-get update
+sudo apt-get install git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc
+#Download New Linux version in downloads folder
+cd Downloads
+tar xf linux-5.8.5.tar.xz
+cd linux-5.8.5
+cp /boot/config-$(urname -r) .config
+sudo apt-get install flex
+sudo apt-get install bison
+make menuconfig
+make
+make module install

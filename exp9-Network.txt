@@ -1,0 +1,8 @@
+/sbin/ifconfig
+ifconfig <ethernet> <ip> netmask 255.255.255.0
+route add default gw 192.168.1.1
+route -n
+sudo service iptables start
+sudo service iptables stop
+sudo service iptables restart
+
