@@ -1,0 +1,28 @@
+ls 
+  -a 
+  -s
+  -S
+  -t
+
+dir 
+  mkdir
+  pwd
+  cd
+  rmdir
+  touch
+ 
+network
+  ping
+  traceroute
+  ifconfig
+  nslookup
+  finger
+
+permission
+  chmod
+
+
+  
+
+
+
